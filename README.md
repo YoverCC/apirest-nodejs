@@ -19,3 +19,6 @@ Cada modulo de nuestras rutas es una mini aplicación en la que creamos sus ruta
 
 **Qué es un middleware?**
 Un middleware es un bloque de código que se ejecuta entre la petición que hace el usuario (request) hasta que la petición llega al servidor.
+
+**The Clean Architecture**
+Entidades -> Servicios -> Controladores (routers, middlewares) -> Equipos.

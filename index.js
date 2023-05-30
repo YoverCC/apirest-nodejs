@@ -6,14 +6,14 @@ const routerApi = require('./routes');
 const { logErrors, errorHandler, boomErrorHandler } = require('./middlewares/error.handler')
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 app.use(express.json()); // Middleware que permite recibir informacion de tipo json
 
 const whitelist = ['http://localhost:5500', 'https://myapp.co'];
 const options = {
   origin: (origin, callback) => {
-    if (whitelist.includes(origin)){
+    if (whitelist.includes(origin) || !origin){
       callback(null, true);
     }else{
       callback(new Error('no permitido'));

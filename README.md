@@ -20,5 +20,24 @@ Cada modulo de nuestras rutas es una mini aplicación en la que creamos sus ruta
 **Qué es un middleware?**
 Un middleware es un bloque de código que se ejecuta entre la petición que hace el usuario (request) hasta que la petición llega al servidor.
 
+Request -> Middleware -> Response
+
+Usos:
+
+- Funciona como pipes.
+- Validar datos.
+- Capturar errores.
+- Validar permisos.
+- Controlar accesos.
+
 **The Clean Architecture**
 Entidades -> Servicios -> Controladores (routers, middlewares) -> Equipos.
+
+**Recomendaciones para producción**
+
+- CORS
+- Https
+- Procesos de Build
+- Remover logs. (Datalogs es buena opción)
+- Seguridad (Helmet - ejemplo de un middleware que controla grandes puntos de seguridad)
+- Testing - Pruebas unitarias

@@ -41,3 +41,56 @@ Entidades -> Servicios -> Controladores (routers, middlewares) -> Equipos.
 - Remover logs. (Datalogs es buena opción)
 - Seguridad (Helmet - ejemplo de un middleware que controla grandes puntos de seguridad)
 - Testing - Pruebas unitarias
+
+# Curso postgresql con nodejs
+
+## Docker
+
+Los contenedores son "stales", es decir no tienen estados, cada vez que se levanta correra el servicio pero si lo bajas se borraran los datos. Las bases de datos si tienen estado (almacenan registro). Para ello se crea un volumen en el .yml.
+
+Levantar el servicio
+```
+docker-compose up -d postgres
+```
+
+Conectarte al docker (al contenedor)
+```
+docker-compose exec postgres bash
+```
+
+Salir del docker
+```
+exit
+```
+
+Revisar mayor detalle de los contenedores
+```
+docker-compose ps
+docker ps
+docker inspect f936c51679e6
+```
+
+## Postgresql
+
+Conectarte a la base de datos
+```
+psql -h localhost -d my_store -U jarvis
+```
+
+Mostrar las entidades (tablas)
+```
+\d+
+```
+
+Salir de la bd
+```
+\q
+```
+
+Se puede usar una interfaz visual (pgadmin) en el que te puedes conectar a la BD y ejecutar query's SQL.
+
+## LIBS
+
+Se encarga de conexion a terceros. Es recomendable manejar las conexiones como tipo POOL, dado que estar conectandose por cada llamado puede consumir tiempos innecesarios.
+
+Es una buena practica poner los datos de las conexiones en variables de ambiente (de entorno).

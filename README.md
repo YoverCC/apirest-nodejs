@@ -94,3 +94,29 @@ Se puede usar una interfaz visual (pgadmin) en el que te puedes conectar a la BD
 Se encarga de conexion a terceros. Es recomendable manejar las conexiones como tipo POOL, dado que estar conectandose por cada llamado puede consumir tiempos innecesarios.
 
 Es una buena practica poner los datos de las conexiones en variables de ambiente (de entorno).
+
+## ORM
+
+💡Un ORM es un modelo de programación que permite mapear las estructuras de una base de datos relacionales.
+Al abstraer este tipo de programación, delegamos su implementación al backend, es decir, le añadimos una de responsabilidad a la capa transaccional del servidor:
+.
+✨Los beneficios son los siguientes:
+
+Acciones como CRUD (Create, Read, Update, Delete) son administradas mediante ORM.
+La implementación de seeds o semillas, nos permiten recuperar, mediante código, la estructura de una BD.
+.
+Una de las bases teóricas para entender este modelo es mediante el conocimiento de DAO (Data Access Object) y DTO (Data Transfer Object), los cuales nos permiten desestructurar un ORM en módulos de abstracción para acceder a la DB y transferir datos desde la misma DB, respectivamente hablando.
+.
+🙃Los contras sería:
+
+Delegación de responsabilidades al server
+Descentralización de trabajo, directa, de una BD.
+
+## Continue learning :)
+
+```
+docker-compose up -d postgres
+docker-compose up -d pgadmin
+docker ps
+docker inspect 00d858386a0e
+```

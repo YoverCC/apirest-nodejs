@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const routerApi = require('./routes');
 // los middlewares de tipo error se deben hacer despues de definir el routing
-const { logErrors, errorHandler, boomErrorHandler } = require('./middlewares/error.handler')
+const { logErrors, errorHandler, boomErrorHandler, ormErrorHandler } = require('./middlewares/error.handler')
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -34,6 +34,7 @@ routerApi(app); // Se modulariza las rutas
 
 // en el orden en el que se declaran es en el orden en que se ejecutarian
 app.use(logErrors);
+app.use(ormErrorHandler);
 app.use(boomErrorHandler);
 app.use(errorHandler);
 

@@ -9,8 +9,8 @@ module.exports = {
     await queryInterface.createTable(CUSTOMER_TABLE, CustomerSchema);
   },
 
-  async down (queryInterface, Sequelize) {
+  async down (queryInterface) {
 
-    await queryInterface.dropSchema(CUSTOMER_TABLE);
+    await queryInterface.dropTable(CUSTOMER_TABLE);
   }
 };

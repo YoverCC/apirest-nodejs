@@ -14,13 +14,13 @@ module.exports = {
     await queryInterface.createTable(USER_TABLE, UserSchema);
   },
 
-  async down (queryInterface, Sequelize) {
+  async down (queryInterface) {
     /**
      * Add reverting commands here.
      *
      * Example:
      * await queryInterface.dropTable('users');
      */
-    await queryInterface.dropSchema(USER_TABLE);
+    await queryInterface.dropTable(USER_TABLE);
   }
 };

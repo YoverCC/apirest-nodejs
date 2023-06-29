@@ -119,4 +119,17 @@ docker-compose up -d postgres
 docker-compose up -d pgadmin
 docker ps
 docker inspect 00d858386a0e
+
+docker-compose up -d mysql
+
+npm run dev
+```
+
+## Migraciones
+
+Es un control de cambio (control de versiones), se manejan desde el codigo. 
+
+```
+npm run migrations:generate change-user-id
+nrpm run migrations:run
 ```

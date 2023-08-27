@@ -16,8 +16,4 @@ module.exports = {
     });
   },
 
-  async down (queryInterface) {
-
-    //await queryInterface.dropSchema(CUSTOMER_TABLE); Se debe tener la version anterior
-  }
 };
